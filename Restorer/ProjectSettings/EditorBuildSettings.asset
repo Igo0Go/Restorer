@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LastNight.unity
+    path: Assets/Scenes/OldScenes/LastNight.unity
     guid: e1196562226db4a47bfb10b24e40f4bb
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
