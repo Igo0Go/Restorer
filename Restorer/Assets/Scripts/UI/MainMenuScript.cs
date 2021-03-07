@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -13,15 +14,32 @@ public class MainMenuScript : MonoBehaviour
     private AudioDispetcher audioDispetcher;
 
     [SerializeField]
+    private PlayableDirector startPlayable;
+    [SerializeField]
+    private LearnScript learnScript;
+
+    [SerializeField]
     private Slider voices;
     [SerializeField]
     private Slider music;
     [SerializeField]
     private Slider sounds;
 
+    private void Start()
+    {
+        music.value = 0.5f;
+        sounds.value = 0.7f;
+        voices.value = 1f;
+    }
+
     public void OnNewGameClick()
     {
         CloseAllPanel();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        learnScript.NextTip(20);
+        learnScript.InvokeOnStartActionAfterTime(21);
+        startPlayable.Play();
     }
 
     public void OnInstructionsClick()
@@ -65,6 +83,4 @@ public class MainMenuScript : MonoBehaviour
     {
         audioDispetcher.VoiceVolume = voices.value;
     }
-
-
 }

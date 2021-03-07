@@ -11,6 +11,8 @@ TagManager:
   - Final
   - CursorChanger
   - AudioCenter
+  - SceneLoader
+  - MusicChanger
   layers:
   - Default
   - TransparentFX

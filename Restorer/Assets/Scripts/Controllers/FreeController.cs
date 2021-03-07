@@ -20,8 +20,6 @@ public class FreeController : MonoBehaviour
     [SerializeField, Range(1, 10)]
     private float fallAnimStartThreshold = 3;
 
-
-
     private Transform myTransform;
     private float animDepth = 0.1f;
     private float maxVerSpeed = 40;
@@ -35,6 +33,11 @@ public class FreeController : MonoBehaviour
     void Update()
     {
         Move();
+    }
+
+    public void SetStyle(int style)
+    {
+        anim.SetInteger("Style", style);
     }
 
     private void Move()

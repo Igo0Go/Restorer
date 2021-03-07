@@ -36,6 +36,11 @@ public class MusicTrackMixer : MonoBehaviour
         supportAudioSource.volume = 0;
     }
 
+    public void MuteMusic()
+    {
+        StartCoroutine(MuteMusicCoroutine());
+    }
+
     /// <summary>
     /// Устанавливает новый активный музыкальный трек
     /// </summary>
@@ -91,11 +96,24 @@ public class MusicTrackMixer : MonoBehaviour
         }
     }
 
+    private IEnumerator MuteMusicCoroutine()
+    {
+        while(mainAudioSource.volume > 0)
+        {
+            mainAudioSource.volume -= Time.deltaTime * 0.1f;
+            yield return null;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("MusicChanger"))
         {
             ChangeMusic(other.GetComponent<MusicChanger>().CheckChange());
         }
+        if(other.CompareTag("SceneLoader"))
+        {
+            MuteMusic();
+        }    
     }
 }
