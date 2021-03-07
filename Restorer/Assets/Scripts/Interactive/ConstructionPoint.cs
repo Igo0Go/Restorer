@@ -12,12 +12,12 @@ public class ConstructionPoint : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        GameData.AddInMax(style);
+        //GameData.AddInMax(style);
     }
 
     public void Construct()
     {
-        GameData.AddInCurrent(style);
+        //GameData.AddInCurrent(style);
         anim.SetTrigger("Construct");
         Destroy(GetComponent<Collider>());
     }

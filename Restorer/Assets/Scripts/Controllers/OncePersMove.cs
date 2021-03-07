@@ -153,11 +153,3 @@ public class OncePersMove : MonoBehaviour
         }
     }
 }
-
-public enum DanceStyle
-{
-    Default = 0,
-    Strong = 1,
-    Middle = 2,
-    Fast = 3
-}
