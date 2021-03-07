@@ -9,6 +9,7 @@ TagManager:
   - CameraChanger
   - Pair
   - Final
+  - CursorChanger
   layers:
   - Default
   - TransparentFX
