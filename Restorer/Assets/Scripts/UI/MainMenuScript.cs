@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -8,6 +9,15 @@ public class MainMenuScript : MonoBehaviour
     private GameObject instructionsPanel;
     [SerializeField]
     private GameObject settingsPanel;
+    [SerializeField]
+    private AudioDispetcher audioDispetcher;
+
+    [SerializeField]
+    private Slider voices;
+    [SerializeField]
+    private Slider music;
+    [SerializeField]
+    private Slider sounds;
 
     public void OnNewGameClick()
     {
@@ -42,4 +52,19 @@ public class MainMenuScript : MonoBehaviour
     {
         panel.SetActive(value);
     }
+
+    public void OnChangeMusic()
+    {
+        audioDispetcher.MusicVolume = music.value;
+    }
+    public void OnChangeSound()
+    {
+        audioDispetcher.SoundVolume = sounds.value;
+    }
+    public void OnChangeVoices()
+    {
+        audioDispetcher.VoiceVolume = voices.value;
+    }
+
+
 }

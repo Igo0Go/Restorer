@@ -18,7 +18,7 @@ public class AudioVolumeChanger : MonoBehaviour
         source = GetComponent<AudioSource>();
         try
         {
-            AudioCenter audioCenter = GameObject.FindGameObjectWithTag("AudioCenter").GetComponent<AudioCenter>();
+            AudioDispetcher audioCenter = GameObject.FindGameObjectWithTag("AudioCenter").GetComponent<AudioDispetcher>();
             switch (type)
             {
                 case AudioType.music:
@@ -28,6 +28,10 @@ public class AudioVolumeChanger : MonoBehaviour
                 case AudioType.sounds:
                     audioCenter.SoundsVolumeChanged += SetValue;
                     SetValue(audioCenter.SoundVolume);
+                    break;
+                case AudioType.voice:
+                    audioCenter.VoiceVolumeChanged += SetValue;
+                    SetValue(audioCenter.VoiceVolume);
                     break;
                 default:
                     audioCenter.MusicVolumeChanged += SetValue;
@@ -44,17 +48,30 @@ public class AudioVolumeChanger : MonoBehaviour
     public void SetValue(float newWalue)
     {
         maxValue = newWalue;
-        if (type == AudioType.sounds)
+
+        switch (type)
+        {
+            case AudioType.music:
+                MusicVolumeChanged?.Invoke(source, maxValue);
+                break;
+            case AudioType.sounds:
             source.volume = maxValue;
-        else
-            MusicVolumeChanged?.Invoke(source, maxValue);
+                break;
+            case AudioType.voice:
+                source.volume = maxValue;
+                break;
+            default:
+                source.volume = maxValue;
+                break;
+        }
     }
 }
 
 public enum AudioType
 {
     music,
-    sounds
+    sounds,
+    voice
 }
 
 
