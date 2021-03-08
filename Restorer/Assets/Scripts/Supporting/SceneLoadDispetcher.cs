@@ -20,6 +20,11 @@ public class SceneLoadDispetcher : MonoBehaviour
         StartCoroutine(StartGameCoroutine());
     }
 
+    public void LoadScene(int index)
+    {
+        sceneIndex = index;
+        LoadNextScene();
+    }
 
     public void LoadNextScene()
     {
@@ -32,7 +37,7 @@ public class SceneLoadDispetcher : MonoBehaviour
         while (t < 1)
         {
             blackPanel.color = Color.Lerp(bufer, Color.black, t);
-            t += Time.deltaTime * 0.1f;
+            t += Time.deltaTime;
             yield return null;
         }
         SceneManager.LoadScene(sceneIndex);
@@ -44,7 +49,7 @@ public class SceneLoadDispetcher : MonoBehaviour
         while (t < 1)
         {
             blackPanel.color = Color.Lerp(Color.black, bufer, t);
-            t += Time.deltaTime*0.1f;
+            t += Time.deltaTime;
             yield return null;
         }
     }

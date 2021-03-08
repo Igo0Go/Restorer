@@ -27,6 +27,8 @@ public class MainMenuScript : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         music.value = 0.5f;
         sounds.value = 0.7f;
         voices.value = 1f;
