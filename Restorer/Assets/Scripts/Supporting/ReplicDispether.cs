@@ -17,13 +17,15 @@ public class ReplicDispether : MonoBehaviour
 
     private void Awake()
     {
+        useTextToggle.isOn = AudioData.useReplicas;
         replicas = new List<ReplicItem>();
         source = GetComponent<AudioSource>();
     }
 
     public void OnToggleChanged()
     {
-        if(bufer != null)
+        AudioData.useReplicas = useTextToggle.isOn;
+        if (bufer != null)
         {
             replicPanel.SetActive(useTextToggle.isOn);
             if (useTextToggle.isOn)

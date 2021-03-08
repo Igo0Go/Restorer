@@ -29,7 +29,7 @@ public class MainMenuScript : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        music.value = 0.5f;
+        music.value = 1f;
         sounds.value = 0.7f;
         voices.value = 1f;
     }

@@ -16,12 +16,15 @@ public class MenuScript : MonoBehaviour
     [SerializeField]
     private AudioDispetcher audioDispetcher;
 
+
+
     [SerializeField]
     private Slider voices;
     [SerializeField]
     private Slider music;
     [SerializeField]
     private Slider sounds;
+
 
     void Start()
     {

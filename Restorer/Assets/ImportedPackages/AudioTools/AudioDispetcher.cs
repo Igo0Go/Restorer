@@ -44,6 +44,8 @@ public static class AudioData
     }
     private static float _voiceVolume;
 
+    public static bool useReplicas;
+
     public static Action<float> MusicVolumeChanged;
     public static Action<float> SoundsVolumeChanged;
     public static Action<float> VoiceVolumeChanged;
