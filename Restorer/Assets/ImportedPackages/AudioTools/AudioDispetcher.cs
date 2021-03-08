@@ -5,17 +5,25 @@ using System;
 
 public class AudioDispetcher : MonoBehaviour
 {
-    public float MusicVolume
+    private void OnDestroy()
+    {
+        AudioData.MusicVolumeChanged = AudioData.SoundsVolumeChanged = AudioData.VoiceVolumeChanged = null;
+    }
+}
+
+public static class AudioData
+{
+    public static float MusicVolume
     {
         get { return _musicVolume; }
-        set 
+        set
         {
             _musicVolume = value;
             MusicVolumeChanged?.Invoke(_musicVolume);
         }
     }
-    private float _musicVolume;
-    public float SoundVolume
+    private static float _musicVolume;
+    public static float SoundVolume
     {
         get { return _soundVolume; }
         set
@@ -24,8 +32,8 @@ public class AudioDispetcher : MonoBehaviour
             SoundsVolumeChanged?.Invoke(_soundVolume);
         }
     }
-    private float _soundVolume;
-    public float VoiceVolume
+    private static float _soundVolume;
+    public static float VoiceVolume
     {
         get { return _voiceVolume; }
         set
@@ -34,9 +42,9 @@ public class AudioDispetcher : MonoBehaviour
             VoiceVolumeChanged?.Invoke(_voiceVolume);
         }
     }
-    private float _voiceVolume;
+    private static float _voiceVolume;
 
-    public Action<float> MusicVolumeChanged;
-    public Action<float> SoundsVolumeChanged;
-    public Action<float> VoiceVolumeChanged;
+    public static Action<float> MusicVolumeChanged;
+    public static Action<float> SoundsVolumeChanged;
+    public static Action<float> VoiceVolumeChanged;
 }

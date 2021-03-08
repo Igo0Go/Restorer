@@ -22,19 +22,19 @@ public class AudioVolumeChanger : MonoBehaviour
             switch (type)
             {
                 case AudioType.music:
-                    audioCenter.MusicVolumeChanged += SetValue;
-                    SetValue(audioCenter.MusicVolume);
+                    AudioData.MusicVolumeChanged += SetValue;
+                    SetValue(AudioData.MusicVolume);
                     break;
                 case AudioType.sounds:
-                    audioCenter.SoundsVolumeChanged += SetValue;
-                    SetValue(audioCenter.SoundVolume);
+                    AudioData.SoundsVolumeChanged += SetValue;
+                    SetValue(AudioData.SoundVolume);
                     break;
                 case AudioType.voice:
-                    audioCenter.VoiceVolumeChanged += SetValue;
-                    SetValue(audioCenter.VoiceVolume);
+                    AudioData.VoiceVolumeChanged += SetValue;
+                    SetValue(AudioData.VoiceVolume);
                     break;
                 default:
-                    audioCenter.MusicVolumeChanged += SetValue;
+                    AudioData.MusicVolumeChanged += SetValue;
                     break;
             }
         }

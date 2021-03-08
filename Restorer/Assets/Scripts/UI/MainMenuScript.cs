@@ -75,14 +75,14 @@ public class MainMenuScript : MonoBehaviour
 
     public void OnChangeMusic()
     {
-        audioDispetcher.MusicVolume = music.value;
+        AudioData.MusicVolume = music.value;
     }
     public void OnChangeSound()
     {
-        audioDispetcher.SoundVolume = sounds.value;
+        AudioData.SoundVolume = sounds.value;
     }
     public void OnChangeVoices()
     {
-        audioDispetcher.VoiceVolume = voices.value;
+        AudioData.VoiceVolume = voices.value;
     }
 }

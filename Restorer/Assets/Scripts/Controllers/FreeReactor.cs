@@ -11,5 +11,9 @@ public class FreeReactor : MonoBehaviour
             other.GetComponent<SceneLoadDispetcher>().LoadNextScene();
             Destroy(other);
         }
+        else if(other.CompareTag("TriggerActor"))
+        {
+            other.GetComponent<TriggerActor>().InvokeEvent();
+        }
     }
 }

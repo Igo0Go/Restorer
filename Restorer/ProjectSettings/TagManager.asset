@@ -13,11 +13,12 @@ TagManager:
   - AudioCenter
   - SceneLoader
   - MusicChanger
+  - TriggerActor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Imagination
   - Water
   - UI
   - 

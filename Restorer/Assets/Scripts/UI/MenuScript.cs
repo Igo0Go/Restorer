@@ -28,9 +28,9 @@ public class MenuScript : MonoBehaviour
         if (pausePanel.activeSelf)
             PauseToggle();
 
-        music.value = 0.5f;
-        sounds.value = 0.7f;
-        voices.value = 1f;
+        music.value = AudioData.MusicVolume;
+        sounds.value = AudioData.SoundVolume;
+        voices.value = AudioData.VoiceVolume;
     }
 
     void Update()
@@ -45,6 +45,7 @@ public class MenuScript : MonoBehaviour
     {
         if(pausePanel.activeSelf)
         {
+            CloseAllPanel();
             pausePanel.SetActive(false);
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
@@ -84,14 +85,14 @@ public class MenuScript : MonoBehaviour
 
     public void OnChangeMusic()
     {
-        audioDispetcher.MusicVolume = music.value;
+        AudioData.MusicVolume = music.value;
     }
     public void OnChangeSound()
     {
-        audioDispetcher.SoundVolume = sounds.value;
+        AudioData.SoundVolume = sounds.value;
     }
     public void OnChangeVoices()
     {
-        audioDispetcher.VoiceVolume = voices.value;
+        AudioData.VoiceVolume = voices.value;
     }
 }

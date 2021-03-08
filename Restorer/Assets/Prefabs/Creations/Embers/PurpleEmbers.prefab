@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8455547476634372489}
   - component: {fileID: 8613652989120449737}
   - component: {fileID: 8614092897757928547}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PurpleEmbers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4756,7 +4756,7 @@ GameObject:
   - component: {fileID: 8455579831991606971}
   - component: {fileID: 8613734902424342377}
   - component: {fileID: 8614384005382515029}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

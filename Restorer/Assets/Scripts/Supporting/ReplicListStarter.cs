@@ -5,6 +5,9 @@ using UnityEngine;
 public class ReplicListStarter : MonoBehaviour
 {
     [SerializeField]
+    private bool playOnAwake = false;
+
+    [SerializeField]
     private List<ReplicItem> items;
 
     [SerializeField]
@@ -12,6 +15,12 @@ public class ReplicListStarter : MonoBehaviour
 
     [SerializeField]
     private ReplicDispether dispether;
+
+    private void Start()
+    {
+        if (playOnAwake)
+            StartReplics();
+    }
 
     public void StartReplics()
     {
